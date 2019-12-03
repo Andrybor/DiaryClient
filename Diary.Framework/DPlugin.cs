@@ -1,0 +1,34 @@
+﻿namespace Diary.Framework
+{
+    public enum DPlugin
+    {
+        Map,
+        Admin,
+        Student,
+        Teacher,
+        Create,
+        EducationalProcess,
+        Info,
+        AccountsCreation,
+        AllAccounts,
+        TeacherInfo,
+        Subject,
+        Specialization,
+        Schedule,
+        Group,
+        Course,
+        Auditorium,
+        News,
+        Library,
+        MainStudent,
+        MainInfoStudent,
+        Progress,
+        Materials,
+        ContactInfo,
+        MainTeacher,
+        MainInfoTeacher,
+        Homework,
+        Statistics,
+        Licenses
+    }
+}

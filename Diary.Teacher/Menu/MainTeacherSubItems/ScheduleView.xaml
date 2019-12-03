@@ -1,0 +1,208 @@
+﻿<UserControl x:Class="Diary.Teacher.Menu.MainTeacherSubItems.ScheduleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Diary.Teacher.Menu.MainTeacherSubItems"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="ScheduleView_OnLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0.8*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    Grid.Row="0"
+                    VerticalAlignment="Center"
+                    Margin="10">
+            <Button Content="{DynamicResource TxtMark}"
+                    x:Name="Mark"/>
+            <Button Content="{DynamicResource TxtLoadFile}" 
+                    Margin="0,10"
+                    x:Name="HomeWork"/>
+        </StackPanel>
+       
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,5,0">
+            <Viewbox>
+                <Calendar SelectedDate="{Binding SelectedDate,UpdateSourceTrigger=PropertyChanged}"
+                          SelectionMode="MultipleRange"
+                          x:Name="ScheduleCalendar">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectedDatesChanged">
+                            <cal:ActionMessage MethodName="AssignDates">
+                                <cal:Parameter Value="{Binding SelectedDates, ElementName=ScheduleCalendar}"/>
+                            </cal:ActionMessage>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Calendar>
+            </Viewbox>
+        </Grid>
+        <ScrollViewer Grid.Row="0" Grid.Column="1"
+                      Grid.ColumnSpan="2"
+        HorizontalScrollBarVisibility="Disabled"
+        VerticalScrollBarVisibility="Auto"
+        Margin="0,5">
+            <ItemsControl ItemsSource="{Binding Schedule}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="390" Height="210" Margin="10" >
+                            <Rectangle  Fill="LightGray" RadiusY="10" RadiusX="10" />
+                            <Grid Margin="0,-10,0,0">
+                                <Grid Width="35"
+                                  Height="50"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Margin="10,0">
+                                    <Rectangle  Fill="Gray" 
+                                            RadiusY="5"
+                                            RadiusX="5" />
+                                    <materialDesign:PackIcon Kind="Schedule" 
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Bottom"
+                                                         Margin="5" 
+                                                         Foreground="Yellow" 
+                                                         Width="20" 
+                                                         Height="20"/>
+                                </Grid>
+                            </Grid>
+                            <ScrollViewer  HorizontalScrollBarVisibility="Disabled"
+                                       VerticalScrollBarVisibility="Auto"
+                                       Margin="0,5">
+                                <StackPanel Margin="0,0,10,20">
+                                    <TextBlock Foreground="Black"
+                                       Text="{Binding Theme}"
+                                       FontSize="20" 
+                                       TextWrapping="Wrap" 
+                                       Margin="70,5,0,0"/>
+                                    <StackPanel Margin="20,20,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="Subject -"
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding Subject.Title}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                            </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="Group -"
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding Group.Title}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="Teacher -" 
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding Teacher.FullName}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="Auditorium -" 
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding Auditorium.Title}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="Start -" 
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding StartTime}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="End -" 
+                                                        FontSize="20"
+                                                        TextWrapping="Wrap"
+                                            />
+                                            <TextBlock  Foreground="Black" 
+                                                        Text="{Binding EndTime}" 
+                                                        TextWrapping="Wrap"
+                                            />
+                                        </StackPanel>
+                                        <Button Content="Перейти"
+                                                        HorizontalAlignment="Center"
+                                                        cal:Message.Attach="[Event Click] = [Action OpenLessonInfo($dataContext)]"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <DataGrid Grid.Row="1" Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  ColumnWidth="*"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding LessonInfos,UpdateSourceTrigger=PropertyChanged}"
+                  LoadingRow="DataGrid_OnLoadingRow"
+                  Margin="10,10,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="{DynamicResource TxtNumber}"
+                    Width="Auto"
+                    Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+                <DataGridTextColumn Binding="{Binding User.FullName,UpdateSourceTrigger=PropertyChanged}"
+                                    Header="{DynamicResource TxtFullName}" />
+                <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtIsPresent}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsPresent,UpdateSourceTrigger=PropertyChanged}"
+                                      HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtGrade}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <mah:NumericUpDown Minimum="0"
+                                               Maximum="12"
+                                               Interval="5"
+                                               Value="{Binding Grade,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

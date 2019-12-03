@@ -1,0 +1,212 @@
+﻿<UserControl x:Class="Diary.Admin.Menu.EducationalProcessSubItems.ScheduleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Diary.Admin.Menu.EducationalProcessSubItems"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtSpecialization}"
+                           HorizontalAlignment="Center" />
+                <mah:SplitButton Grid.Column="1"
+                                 ItemsSource="{Binding Specializations,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedSpecialization}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+
+                <TextBlock Grid.Column="2"
+                           Text="{DynamicResource TxtCourse}"
+                           HorizontalAlignment="Center" />
+
+                <mah:SplitButton Grid.Column="3"
+                                 ItemsSource="{Binding Courses,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedCourse}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtGroup}"
+                           HorizontalAlignment="Center" />
+                <mah:SplitButton Grid.Column="1"
+                                 ItemsSource="{Binding Groups,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedGroup}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+
+                <TextBlock Grid.Column="2"
+                           Text="{DynamicResource TxtTeacher}"
+                           HorizontalAlignment="Center" />
+
+                <mah:SplitButton Grid.Column="3"
+                                 ItemsSource="{Binding Teachers,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedTeacher}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FullName,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{DynamicResource TxtSubject}"
+                           Grid.Column="0"
+                           HorizontalAlignment="Center" />
+
+                <TextBlock Text="{DynamicResource TxtAuditorium}"
+                           Grid.Column="2"
+                           HorizontalAlignment="Center" />
+
+                <mah:SplitButton Grid.Column="3"
+                                 ItemsSource="{Binding Auditoriums,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedAuditorium}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+
+                <mah:SplitButton Grid.Column="1"
+                                 ItemsSource="{Binding Subjects,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Center"
+                                 SelectedItem="{Binding SelectedSubject}">
+                    <mah:SplitButton.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </mah:SplitButton.ItemTemplate>
+                </mah:SplitButton>
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtStartTime}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <mah:DateTimePicker Grid.Column="1"
+                                    SelectedDate="{Binding Schedule.StartTime,UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Column="2"
+                           Text="{DynamicResource TxtEndTime}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+
+                <mah:DateTimePicker Grid.Column="3"
+                                    SelectedDate="{Binding Schedule.EndTime,UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtTheme}"
+                           HorizontalAlignment="Center" />
+                <TextBox Grid.Column="1"
+                         Grid.ColumnSpan="2"
+                         Text="{Binding Schedule.Theme,UpdateSourceTrigger=PropertyChanged}" />
+                <Button x:Name="Create"
+                        Grid.Column="3"
+                        Content="{DynamicResource TxtCreate}"
+                        Width="100"
+                        VerticalAlignment="Center" />
+            </Grid>
+        </StackPanel>
+        <DataGrid Grid.Row="1"
+                  ColumnWidth="*"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding Schedules,UpdateSourceTrigger=PropertyChanged}"
+                  LoadingRow="DataGrid_OnLoadingRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="{DynamicResource TxtNumber}"
+                    Width="Auto"
+                    Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+                <DataGridTextColumn Binding="{Binding Theme,UpdateSourceTrigger=PropertyChanged}"
+                                    Header="{DynamicResource TxtTheme}"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding StartTime,UpdateSourceTrigger=PropertyChanged}"
+                                    Header="{DynamicResource TxtStartTime}"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding EndTime,UpdateSourceTrigger=PropertyChanged}"
+                                    Header="{DynamicResource TxtEndTime}"
+                                    IsReadOnly="True" />
+                <!--<DataGridTemplateColumn Width="0.35*" Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                                cal:Message.Attach="[Event Click] = [Action Edit($dataContext)]"
+                                Content="Edit"
+                                Width="100"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtDelete}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                                cal:Message.Attach="[Event Click] = [Action Delete($dataContext)]"
+                                Content="{DynamicResource TxtDelete}"
+                                Width="100" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

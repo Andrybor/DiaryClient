@@ -1,0 +1,69 @@
+﻿<Grid x:Class="Diary.Admin.Menu.EducationalProcessSubItems.SpecializationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:cal="http://www.caliburnproject.org"
+      mc:Ignorable="d"
+      MinHeight="400"
+      MinWidth="600">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="1*" />
+        <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                   Text="{DynamicResource TxtSpecialization}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+
+        <TextBox Grid.Column="1"
+                 Text="{Binding Specialization.Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 VerticalAlignment="Center" />
+        <Button Grid.Column="2"
+                Content="{DynamicResource TxtCreate}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                x:Name="Create" />
+    </Grid>
+    <DataGrid Grid.Row="1"
+              ColumnWidth="*"
+              AutoGenerateColumns="False"
+              CanUserAddRows="False"
+              ItemsSource="{Binding Specializations,UpdateSourceTrigger=PropertyChanged}"
+              LoadingRow="DataGrid_OnLoadingRow">
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                Header="{DynamicResource TxtNumber}"
+                Width="Auto"
+                Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+            <DataGridTextColumn Binding="{Binding Title,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtTitle}" />
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtEdit}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Edit($dataContext)]"
+                            Content="{DynamicResource TxtEdit}"
+                            HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtDelete}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Delete($dataContext)]"
+                            Content="{DynamicResource TxtDelete}"
+                            HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Grid>

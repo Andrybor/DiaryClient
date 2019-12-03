@@ -1,0 +1,11 @@
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Diary.Common.dll
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Diary.Common.pdb
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Newtonsoft.Json.dll
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Newtonsoft.Json.xml
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\obj\Debug\Diary.Common.csproj.CoreCompileInputs.cache
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\obj\Debug\Diary.Common.csproj.CopyComplete
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\obj\Debug\Diary.Common.dll
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\obj\Debug\Diary.Common.pdb
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Caliburn.Micro.dll
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\bin\Debug\Caliburn.Micro.xml
+D:\Users\Andrii.Borysenko\Desktop\Diary\Diary.Common\obj\Debug\Diary.Common.csprojAssemblyReference.cache

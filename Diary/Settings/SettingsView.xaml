@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Diary.Settings.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Diary.Settings"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="79.2" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource TxtSettings}"
+                   FontSize="30"
+                   Margin="20,26,0,18.2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left" Height="35" />
+        <StackPanel Grid.Row="1" Margin="0,32.8,30,0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtTheme}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="25,10" />
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="{DynamicResource TxtLight}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="25,10" />
+                    <ToggleButton IsChecked="{Binding IsTheme}" />
+                    <TextBlock Text="{DynamicResource TxtDark}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="25,10" />
+                </StackPanel>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtStyle}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="25,10" />
+                <mah:SplitButton Grid.Column="1"
+                                 Margin="5"
+                                 VerticalContentAlignment="Center"
+                                 ItemsSource="{Binding Styles}"
+                                 SelectedItem="{Binding Style,UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtLanguage}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="25,10" />
+                <mah:SplitButton Grid.Column="1"
+                                 Margin="5"
+                                 VerticalContentAlignment="Center"
+                                 ItemsSource="{Binding Languages}"
+                                 SelectedItem="{Binding Language,UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           Text="{DynamicResource TxtExtensions}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="25,10" />
+                <Button Grid.Column="1"
+                        x:Name="LoadExtension"
+                        Margin="5"
+                        VerticalContentAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Content="{DynamicResource TxtLoad}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

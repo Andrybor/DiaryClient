@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--General/Common -->
+    <system:String x:Key="TxtEdit">Редактировать</system:String>
+    <system:String x:Key="TxtExtensions">Расширения</system:String>
+    <system:String x:Key="TxtLoad">Загрузка</system:String>
+    <system:String x:Key="TxtDelete">Удалить</system:String>
+    <system:String x:Key="TxtCreate">Создать</system:String>
+    <system:String x:Key="TxtNumber">Номер</system:String>
+    <system:String x:Key="TxtTitle">Заголовок</system:String>
+    <system:String x:Key="TxtChoosePhoto">Выбрать Фотографию</system:String>
+    <system:String x:Key="TxtCount">Количество</system:String>
+    <system:String x:Key="TxtAdmin">Администратор</system:String>
+    <system:String x:Key="TxtTeacher">Преподаватель</system:String>
+    <system:String x:Key="TxtStudent">Студент</system:String>
+    <system:String x:Key="TxtMainInfo">Главная Информация</system:String>
+    <system:String x:Key="TxtContactInfo">Контакты</system:String>
+    <system:String x:Key="TxtMain">Главная</system:String>
+    <system:String x:Key="TxtProgress">Прогресс</system:String>
+    <system:String x:Key="TxtHomework">Домашние работы</system:String>
+    <system:String x:Key="TxtMaterials">Материалы</system:String>
+    <system:String x:Key="TxtDownloadToDesktop">Загрузить</system:String>
+    <system:String x:Key="TxtMark">Отметить</system:String>
+    <system:String x:Key="TxtLoadFile">Загрузить файл</system:String>
+    <system:String x:Key="TxtIsPresent">Присутствие</system:String>
+    <system:String x:Key="TxtGrade">Оценка</system:String>
+    <system:String x:Key="TxtEditAccount">Редактировать Аккаунт</system:String>
+    <system:String x:Key="TxtEditCourse">Редактировать Курс</system:String>
+    <system:String x:Key="TxtEditGroup">Редактировать Группу</system:String>
+    <system:String x:Key="TxtEditSubject">Редактировать Предмет</system:String>
+    <system:String x:Key="TxtSend">Отправить</system:String>
+    <!--General/Common -->
+
+    <!--Login Panel -->
+    <system:String x:Key="TxtLogIn">Вход</system:String>
+    <!--Login Panel -->
+
+    <!--Settings Panel -->
+    <system:String x:Key="TxtSettings">Настройки</system:String>
+    <system:String x:Key="TxtSave">Сохранить</system:String>
+    <system:String x:Key="TxtStyle">Стиль</system:String>
+    <system:String x:Key="TxtLanguage">Язык</system:String>
+    <system:String x:Key="TxtTheme">Тема</system:String>
+    <system:String x:Key="TxtLight">Светлый</system:String>
+    <system:String x:Key="TxtDark">Темный</system:String>
+    <!--Settings Panel -->
+
+    <!--Admin Panel -->
+    <system:String x:Key="TxtAccounts">Аккаунты</system:String>
+    <system:String x:Key="TxtEducationalProcess">Учебный Процесс</system:String>
+    <system:String x:Key="TxtInfo">Информация</system:String>
+    <!--Accounts Panel -->
+    <system:String x:Key="TxtAllAccounts">Все Аккаунты</system:String>
+    <system:String x:Key="TxtAccountsCreation">Создание Аккаунта</system:String>
+    <!--AccountsCreation Panel -->
+    <system:String x:Key="TxtBasicInfo">Базовая Информация</system:String>
+    <system:String x:Key="TxtName">Имя</system:String>
+    <system:String x:Key="TxtSurname">Фамилия</system:String>
+    <system:String x:Key="TxtMiddleName">Отчество</system:String>
+    <system:String x:Key="TxtBirthday">Дата Рождения</system:String>
+    <system:String x:Key="TxtSex">Пол</system:String>
+    <system:String x:Key="TxtMale">Мужской</system:String>
+    <system:String x:Key="TxtFemale">Женский</system:String>
+    <system:String x:Key="TxtEmail">Электронная Почта</system:String>
+    <system:String x:Key="TxtPhone">Телефон</system:String>
+    <system:String x:Key="TxtAccountInfo">Информация по Аккаунту</system:String>
+    <system:String x:Key="TxtLogin">Логин</system:String>
+    <system:String x:Key="TxtPassword">Пароль</system:String>
+    <!--AccountsCreation Panel -->
+
+    <!--AllAccounts Panel -->
+    <system:String x:Key="TxtCreatingDay">Дата Создания</system:String>
+    <system:String x:Key="TxtFullName">Полное Имя</system:String>
+    <!--AllAccounts Panel -->
+    <!--Accounts Panel -->
+
+    <!--EducationalProcess Panel -->
+    <system:String x:Key="TxtAuditoriums">Аудитории</system:String>
+    <system:String x:Key="TxtAuditorium">Аудитория</system:String>
+    <system:String x:Key="TxtGroup">Группа</system:String>
+    <system:String x:Key="TxtCourse">Курс</system:String>
+    <system:String x:Key="TxtSpecialization">Специализация</system:String>
+    <system:String x:Key="TxtGroups">Группы</system:String>
+    <system:String x:Key="TxtSchedule">Рассписание</system:String>
+    <system:String x:Key="TxtSpecializations">Специализации</system:String>
+    <system:String x:Key="TxtCourses">Курсы</system:String>
+    <system:String x:Key="TxtSubjects">Предметы</system:String>
+    <system:String x:Key="TxtTeacherInfo">Учитель</system:String>
+    <system:String x:Key="TxtSubject">Предмет</system:String>
+    <system:String x:Key="TxtStartTime">Начальное Время</system:String>
+    <system:String x:Key="TxtEndTime">Конечное Время</system:String>
+    <system:String x:Key="TxtHours">Часы</system:String>
+    <system:String x:Key="TxtAssign">Назначить</system:String>
+    <!--EducationalProcess Panel -->
+
+    <!--Info Panel -->
+    <system:String x:Key="TxtText">Текст</system:String>
+    <system:String x:Key="TxtImage">Изображение</system:String>
+    <system:String x:Key="TxtAccountType">Тип Аккаунта</system:String>
+    <system:String x:Key="TxtAddMaterial">Добавить Материал</system:String>
+    <system:String x:Key="TxtNews">Новости</system:String>
+    <!--Info Panel -->
+
+    <!--Admin Panel -->
+</ResourceDictionary>

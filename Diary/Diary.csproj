@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFB33C16-450B-4720-9E3C-BCB89A48E6EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Diary</RootNamespace>
+    <AssemblyName>Diary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Themes\rocket_startup_monitor_screen_computer_icon_124621 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart, Version=0.9.5818.20693, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUICharts.WPF.Beta.0.9.1\lib\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Modern, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Modern.2.3.0\lib\net46\MahApps.Metro.IconPacks.Modern.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ModernMessageBoxLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernMessageBoxLib.1.3.0\lib\net45\ModernMessageBoxLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="About\AboutViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoadingScreen\LoadingScreenView.xaml.cs">
+      <DependentUpon>LoadingScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingScreen\LoadingScreenViewModel.cs" />
+    <Compile Include="ReportBugDioalog\BugReportDialogView.xaml.cs">
+      <DependentUpon>BugReportDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBugDioalog\BugReportDialogViewModel.cs" />
+    <Compile Include="Settings\SettingsHelper.cs" />
+    <Compile Include="Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\SettingsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Diary.Admin\Diary.Admin.csproj">
+      <Project>{d9a41860-15aa-4bef-ba14-7b4219aae4ce}</Project>
+      <Name>Diary.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Common\Diary.Common.csproj">
+      <Project>{c6f20a42-cd81-4b48-826c-a678a6961061}</Project>
+      <Name>Diary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Controls\Diary.Controls.csproj">
+      <Project>{2e2a5a0f-264d-4636-9aeb-17a4f63df6a6}</Project>
+      <Name>Diary.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Framework\Diary.Framework.csproj">
+      <Project>{58749ea5-e48e-44a2-9a7f-2425964f87ae}</Project>
+      <Name>Diary.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Repositories\Diary.Repositories.csproj">
+      <Project>{679b9784-8af5-4c88-88ad-14df592b4335}</Project>
+      <Name>Diary.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Resources\Diary.Resources.csproj">
+      <Project>{5f2e501d-b32d-4e2c-81cd-b1331ffa62b9}</Project>
+      <Name>Diary.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Student\Diary.Student.csproj">
+      <Project>{04764293-d007-45a4-8e5f-117bbc969f0b}</Project>
+      <Name>Diary.Student</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Teacher\Diary.Teacher.csproj">
+      <Project>{6939e92f-efde-460e-8b97-aa2fa881c481}</Project>
+      <Name>Diary.Teacher</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="About\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingScreen\LoadingScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportBugDioalog\BugReportDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles\DefaultColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Styles\TextBlockStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Styles\MaterialDesignTheme.Overrides.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\My Post.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\rocket_startup_monitor_screen_computer_icon_124621 %281%29.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About\licenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Background.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

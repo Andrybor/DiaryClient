@@ -1,0 +1,122 @@
+﻿<Grid x:Class="Diary.Admin.Menu.InfoSubItems.ContactInfoView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:cal="http://www.caliburnproject.org"
+      mc:Ignorable="d"
+      MinHeight="400"
+      MinWidth="600">
+  
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0" Margin="10">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                   Text="{DynamicResource TxtTitle}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+
+        <TextBox Grid.Column="1"
+                 Text="{Binding Contact.Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 VerticalAlignment="Center" />
+      
+    </Grid>
+        <Grid Margin="0,10,0,0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                   Text="{DynamicResource TxtText}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+
+            <TextBox Grid.Column="1"
+                 Text="{Binding Contact.Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 VerticalAlignment="Center" />
+        </Grid>
+        <Grid Margin="0,20,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtEmail}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+
+            <TextBox Grid.Column="1"
+                     Text="{Binding Contact.Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+        </Grid>
+        <Grid Margin="0,20,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtPhone}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+
+            <TextBox Grid.Column="1"
+                     Text="{Binding Contact.PhoneNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+            <Button Grid.Column="2"
+                    Content="{DynamicResource TxtCreate}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    x:Name="Create" />
+        </Grid>
+    </StackPanel>
+    <DataGrid Grid.Row="1"
+              ColumnWidth="*"
+              AutoGenerateColumns="False"
+              CanUserAddRows="False"
+              ItemsSource="{Binding Contacts,UpdateSourceTrigger=PropertyChanged}"
+              LoadingRow="DataGrid_OnLoadingRow">
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                Header="{DynamicResource TxtNumber}"
+                Width="Auto"
+                Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+            <DataGridTextColumn Binding="{Binding Title,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtTitle}" />
+            <DataGridTextColumn Binding="{Binding Email,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtEmail}" />
+            <DataGridTextColumn Binding="{Binding PhoneNumber,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtPhone}" />
+            <!--<DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtEdit}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Edit($dataContext)]"
+                            Content="{DynamicResource TxtEdit}"
+                            HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>-->
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtDelete}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Delete($dataContext)]"
+                            Content="{DynamicResource TxtDelete}"
+                            HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Grid>

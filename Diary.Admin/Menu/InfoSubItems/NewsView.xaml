@@ -1,0 +1,101 @@
+﻿<Grid x:Class="Diary.Admin.Menu.InfoSubItems.NewsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:cal="http://www.caliburnproject.org"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtTitle}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+
+            <TextBox Grid.Column="1"
+                     MaxLength="50"
+                     Text="{Binding News.Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+
+        </Grid>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     AcceptsReturn="True"
+                     Text="{Binding News.Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+        </Grid>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtAccountType}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+            <ComboBox Grid.Column="1"
+                      VerticalAlignment="Center"
+                      ItemsSource="{Binding AccountTypes,UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding SelectedAccountType,UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Grid.Column="2"
+                    Content="{DynamicResource TxtCreate}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    x:Name="Create" />
+        </Grid>
+    </StackPanel>
+
+    <DataGrid Grid.Row="1"
+              ColumnWidth="*"
+              AutoGenerateColumns="False"
+              CanUserAddRows="False"
+              ItemsSource="{Binding AllNews,UpdateSourceTrigger=PropertyChanged}"
+              LoadingRow="DataGrid_OnLoadingRow">
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                Header="{DynamicResource TxtNumber}"
+                Width="Auto"
+                Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+            <DataGridTextColumn Binding="{Binding Title,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtTitle}" />
+            <!--<DataGridTemplateColumn Width="0.35*" Header="Edit">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Edit($dataContext)]"
+                            Content="Edit"
+                            Width="100"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>-->
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtDelete}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Delete($dataContext)]"
+                            Content="{DynamicResource TxtDelete}"
+                            HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Grid>

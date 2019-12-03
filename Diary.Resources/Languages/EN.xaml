@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--General/Common -->
+    <system:String x:Key="TxtEdit">Edit</system:String>
+    <system:String x:Key="TxtExtensions">Extensions</system:String>
+    <system:String x:Key="TxtLoad">Load</system:String>
+    <system:String x:Key="TxtDelete">Delete</system:String>
+    <system:String x:Key="TxtCreate">Create</system:String>
+    <system:String x:Key="TxtNumber">Number</system:String>
+    <system:String x:Key="TxtTitle">Title</system:String>
+    <system:String x:Key="TxtChoosePhoto">Choose Photo</system:String>
+    <system:String x:Key="TxtCount">Count</system:String>
+    <system:String x:Key="TxtAdmin">Admin</system:String>
+    <system:String x:Key="TxtTeacher">Teacher</system:String>
+    <system:String x:Key="TxtStudent">Student</system:String>
+    <system:String x:Key="TxtContactInfo">Contact Info</system:String>
+    <system:String x:Key="TxtMain">Main</system:String>
+    <system:String x:Key="TxtMainInfo">Main Info</system:String>
+    <system:String x:Key="TxtProgress">Progress</system:String>
+    <system:String x:Key="TxtHomework">Homework</system:String>
+    <system:String x:Key="TxtMaterials">Materials</system:String>
+    <system:String x:Key="TxtDownloadToDesktop">Download to Desktop</system:String>
+    <system:String x:Key="TxtMark">Mark</system:String>
+    <system:String x:Key="TxtLoadFile">Load File</system:String>
+    <system:String x:Key="TxtIsPresent">Present</system:String>
+    <system:String x:Key="TxtGrade">Grade</system:String>
+    <system:String x:Key="TxtEditAccount">Edit Account</system:String>
+    <system:String x:Key="TxtEditCourse">Edit Course</system:String>
+    <system:String x:Key="TxtEditGroup">Edit Group</system:String>
+    <system:String x:Key="TxtEditSubject">Edit Subject</system:String>
+    <!--General/Common -->
+
+    <!--Login Panel -->
+    <system:String x:Key="TxtLogIn">Sign in</system:String>
+    <!--Login Panel -->
+
+    <!--Settings Panel -->
+    <system:String x:Key="TxtSettings">Settings</system:String>
+    <system:String x:Key="TxtSave">Save</system:String>
+    <system:String x:Key="TxtStyle">Style</system:String>
+    <system:String x:Key="TxtLanguage">Language</system:String>
+    <system:String x:Key="TxtTheme">Theme</system:String>
+    <system:String x:Key="TxtLight">Light</system:String>
+    <system:String x:Key="TxtDark">Dark</system:String>
+    <!--Settings Panel -->
+
+    <!--Admin Panel -->
+    <system:String x:Key="TxtAccounts">Accounts</system:String>
+    <system:String x:Key="TxtEducationalProcess">Educational Process</system:String>
+    <system:String x:Key="TxtInfo">Info</system:String>
+    <!--Accounts Panel -->
+    <system:String x:Key="TxtAllAccounts">All Accounts</system:String>
+    <system:String x:Key="TxtAccountsCreation">Accounts Creation</system:String>
+    <!--AccountsCreation Panel -->
+    <system:String x:Key="TxtBasicInfo">Basic Info</system:String>
+    <system:String x:Key="TxtName">Name</system:String>
+    <system:String x:Key="TxtSurname">Surname</system:String>
+    <system:String x:Key="TxtMiddleName">MiddleName</system:String>
+    <system:String x:Key="TxtBirthday">Birthday</system:String>
+    <system:String x:Key="TxtSex">Sex</system:String>
+    <system:String x:Key="TxtMale">Male</system:String>
+    <system:String x:Key="TxtFemale">Female</system:String>
+    <system:String x:Key="TxtEmail">Email</system:String>
+    <system:String x:Key="TxtPhone">Phone</system:String>
+    <system:String x:Key="TxtAccountInfo">Account Info</system:String>
+    <system:String x:Key="TxtLogin">Login</system:String>
+    <system:String x:Key="TxtPassword">Password</system:String>
+    <system:String x:Key="TxtSend">Send</system:String>
+    <!--AccountsCreation Panel -->
+
+    <!--AllAccounts Panel -->
+    <system:String x:Key="TxtCreatingDay">Creating Day</system:String>
+    <system:String x:Key="TxtFullName">Full Name</system:String>
+    <!--AllAccounts Panel -->
+    <!--Accounts Panel -->
+
+    <!--EducationalProcess Panel -->
+    <system:String x:Key="TxtAuditoriums">Auditoriums</system:String>
+    <system:String x:Key="TxtAuditorium">Auditorium</system:String>
+    <system:String x:Key="TxtGroup">Group</system:String>
+    <system:String x:Key="TxtCourse">Course</system:String>
+    <system:String x:Key="TxtSpecialization">Specialization</system:String>
+    <system:String x:Key="TxtGroups">Groups</system:String>
+    <system:String x:Key="TxtSchedule">Schedule</system:String>
+    <system:String x:Key="TxtSpecializations">Specializations</system:String>
+    <system:String x:Key="TxtCourses">Courses</system:String>
+    <system:String x:Key="TxtSubjects">Subjects</system:String>
+    <system:String x:Key="TxtTeacherInfo">Teacher Info</system:String>
+    <system:String x:Key="TxtSubject">Subject</system:String>
+    <system:String x:Key="TxtStartTime">Start Time</system:String>
+    <system:String x:Key="TxtEndTime">End Time</system:String>
+    <system:String x:Key="TxtHours">Hours</system:String>
+    <system:String x:Key="TxtAssign">Assign</system:String>
+    <!--EducationalProcess Panel -->
+
+    <!--Info Panel -->
+    <system:String x:Key="TxtText">Text</system:String>
+    <system:String x:Key="TxtImage">Image</system:String>
+    <system:String x:Key="TxtAccountType">AccountType</system:String>
+    <system:String x:Key="TxtAddMaterial">Add Material</system:String>
+    <system:String x:Key="TxtNews">News</system:String>
+    <!--Info Panel -->
+
+    <!--Admin Panel -->
+</ResourceDictionary>

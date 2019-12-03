@@ -1,0 +1,41 @@
+﻿<Grid x:Class="Diary.Teacher.Menu.MainTeacherView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid.Resources>
+        <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type Controls:HamburgerMenuIconItem}">
+            <Grid Height="64">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="64" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <materialDesign:PackIcon
+                        Kind="{Binding Panel.Icon}"
+                        VerticalAlignment="Center"
+                        Margin="15" />
+                </Grid>
+                <TextBlock Grid.Column="1"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           Text="{Binding DisplayName}" />
+            </Grid>
+        </DataTemplate>
+    </Grid.Resources>
+    <Grid>
+        <Border BorderThickness="0,10,0,0" BorderBrush="{Binding ElementName=HamburgerMenu,Path=PaneBackground}">
+            <Controls:HamburgerMenu
+                x:Name="HamburgerMenu"
+                IsPaneOpen="{Binding IsMenuOpen}"
+                Margin="0,-1,0,0"
+                ItemsSource="{Binding Items}"
+                PaneBackground="Gray"
+                ItemTemplate="{StaticResource MenuItemTemplate}"
+                SelectedItem="{Binding ActiveItem}">
+                <ContentControl x:Name="ActiveItem"
+                                Content="{Binding SelectedItem}" />
+            </Controls:HamburgerMenu>
+        </Border>
+    </Grid>
+</Grid>

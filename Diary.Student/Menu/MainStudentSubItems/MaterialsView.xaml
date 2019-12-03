@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Diary.Student.Menu.MainStudentSubItems.MaterialsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:converters="clr-namespace:Diary.Controls.Converters;assembly=Diary.Controls"
+             xmlns:cal="http://www.caliburnproject.org">
+    <UserControl.Resources>
+        <converters:ByteToImageConverter x:Key="ImageConverter"/>
+    </UserControl.Resources>
+    <ScrollViewer
+        HorizontalScrollBarVisibility="Disabled"
+        VerticalScrollBarVisibility="Auto">
+    <ItemsControl ItemsSource="{Binding Materials}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <materialDesign:Card
+                        Margin="20"
+                        Width="200">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                    Height="235" />
+                            <RowDefinition
+                                    Height="*" />
+                            <RowDefinition
+                                    Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+                                Source="{Binding Image,Converter={StaticResource ImageConverter}}"
+                                Height="235"
+                                Width="200"
+                                Stretch="Fill" />
+                        <Button
+                                Grid.Row="0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Margin="0 0 16 -20"
+                                cal:Message.Attach="[Event Click] = [Action FileSearch($dataContext)]">
+                            <materialDesign:PackIcon
+                                    Kind="FileDocument" />
+                        </Button>
+                        <StackPanel
+                                Grid.Row="1"
+                                Margin="8 24 8 10">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                FontWeight="Bold" Text="{Binding Title}"
+                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    </ScrollViewer>
+</UserControl>

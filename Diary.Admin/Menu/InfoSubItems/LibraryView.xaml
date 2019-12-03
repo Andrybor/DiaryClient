@@ -1,0 +1,124 @@
+﻿<Grid x:Class="Diary.Admin.Menu.InfoSubItems.LibraryView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:cal="http://www.caliburnproject.org"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:converters="clr-namespace:Diary.Controls.Converters;assembly=Diary.Controls">
+    <Grid.Resources>
+        <converters:ByteToImageConverter x:Key="ByteToImageConverter" />
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="3*" />
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtTitle}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+
+            <TextBox Grid.Column="1"
+                     MaxLength="50"
+                     Text="{Binding Material.Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+
+        </Grid>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+            <TextBox Grid.Column="1"
+                     AcceptsReturn="True"
+                     Text="{Binding Material.Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Center" />
+        </Grid>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{DynamicResource TxtImage}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+            <Border Height="100"
+                    Width="100"
+                    BorderThickness="2"
+                    Margin="20,0"
+                    Grid.Column="1"
+                    BorderBrush="{DynamicResource DefaultGray}"
+                    HorizontalAlignment="Stretch">
+                <Image Source="{Binding Photo}" />
+            </Border>
+
+            <Button Grid.Column="2"
+                    Content="{DynamicResource TxtCreate}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    x:Name="Create" />
+        </Grid>
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="{DynamicResource TxtChoosePhoto}"
+                x:Name="SetPhoto"
+                Margin="0,0,0,10" />
+    </StackPanel>
+
+    <DataGrid Grid.Row="1"
+              ColumnWidth="*"
+              AutoGenerateColumns="False"
+              CanUserAddRows="False"
+              ItemsSource="{Binding Materials,UpdateSourceTrigger=PropertyChanged}"
+              LoadingRow="DataGrid_OnLoadingRow">
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                Header="{DynamicResource TxtNumber}"
+                Width="Auto"
+                Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}},Path=Header,Mode=OneWay}" />
+            <DataGridTextColumn Binding="{Binding Title,UpdateSourceTrigger=PropertyChanged}"
+                                Header="{DynamicResource TxtTitle}" />
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtImage}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Image,Converter={StaticResource ByteToImageConverter}}"
+                               Height="70"
+                               Width="70" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <!--<DataGridTemplateColumn Width="0.35*" Header="Edit">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Edit($dataContext)]"
+                            Content="Edit"
+                            Width="100"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>-->
+            <DataGridTemplateColumn Width="0.35*" Header="{DynamicResource TxtDelete}">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button
+                            cal:Message.Attach="[Event Click] = [Action Delete($dataContext)]"
+                            Content="{DynamicResource TxtDelete}"
+                            Width="100" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Grid>

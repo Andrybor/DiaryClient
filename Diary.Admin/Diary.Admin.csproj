@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9A41860-15AA-4BEF-BA14-7B4219AAE4CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Diary.Admin</RootNamespace>
+    <AssemblyName>Diary.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Modern, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Modern.2.3.0\lib\net46\MahApps.Metro.IconPacks.Modern.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ModernMessageBoxLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernMessageBoxLib.1.3.0\lib\net45\ModernMessageBoxLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AdminMainView.xaml.cs">
+      <DependentUpon>AdminMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMainViewModel.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\CreateAccountSubItems\AccountsCreationView.xaml.cs">
+      <DependentUpon>AccountsCreationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\CreateAccountSubItems\AccountsCreationViewModel.cs" />
+    <Compile Include="Menu\CreateAccountSubItems\AccountsReviewingView.xaml.cs">
+      <DependentUpon>AccountsReviewingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\CreateAccountSubItems\AccountsReviewingViewModel.cs" />
+    <Compile Include="Menu\CreateAccountSubItems\EditAccountInfo\AccountInfoView.xaml.cs">
+      <DependentUpon>AccountInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\CreateAccountSubItems\EditAccountInfo\AccountInfoViewModel.cs" />
+    <Compile Include="Menu\CreateAccountView.xaml.cs">
+      <DependentUpon>CreateAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\CreateAccountViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\AuditoriumView.xaml.cs">
+      <DependentUpon>AuditoriumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\AuditoriumViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\EditCourcesWizzard\EditCourcesView.xaml.cs">
+      <DependentUpon>EditCourcesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\EditCourcesWizzard\EditCourcesViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\EditGroupWizzard\EditGroupView.xaml.cs">
+      <DependentUpon>EditGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\EditGroupWizzard\EditGroupViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\EditSubjectsWizzard\EditSubjectView.xaml.cs">
+      <DependentUpon>EditSubjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\EditSubjectsWizzard\EditSubjectViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\GroupsView.xaml.cs">
+      <DependentUpon>GroupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\GroupsViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\ScheduleView.xaml.cs">
+      <DependentUpon>ScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\ScheduleViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\SpecializationView.xaml.cs">
+      <DependentUpon>SpecializationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\SpecializationViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\CourcesView.xaml.cs">
+      <DependentUpon>CourcesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\CourcesViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\SubjectView.xaml.cs">
+      <DependentUpon>SubjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\SubjectViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessSubItems\TeacherInfoView.xaml.cs">
+      <DependentUpon>TeacherInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessSubItems\TeacherInfoViewModel.cs" />
+    <Compile Include="Menu\EducationalProcessView.xaml.cs">
+      <DependentUpon>EducationalProcessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\EducationalProcessViewModel.cs" />
+    <Compile Include="Menu\InfoSubItems\ContactInfoView.xaml.cs">
+      <DependentUpon>ContactInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\InfoSubItems\ContactInfoViewModel.cs" />
+    <Compile Include="Menu\InfoSubItems\LibraryView.xaml.cs">
+      <DependentUpon>LibraryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\InfoSubItems\LibraryViewModel.cs" />
+    <Compile Include="Menu\InfoSubItems\LicensesView.xaml.cs">
+      <DependentUpon>LicensesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\InfoSubItems\LicensesViewModel.cs" />
+    <Compile Include="Menu\InfoSubItems\NewsView.xaml.cs">
+      <DependentUpon>NewsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\InfoSubItems\NewsViewModel.cs" />
+    <Compile Include="Menu\InfoView.xaml.cs">
+      <DependentUpon>InfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\InfoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Diary.Common\Diary.Common.csproj">
+      <Project>{C6F20A42-CD81-4B48-826C-A678A6961061}</Project>
+      <Name>Diary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Controls\Diary.Controls.csproj">
+      <Project>{2e2a5a0f-264d-4636-9aeb-17a4f63df6a6}</Project>
+      <Name>Diary.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Framework\Diary.Framework.csproj">
+      <Project>{58749EA5-E48E-44A2-9A7F-2425964F87AE}</Project>
+      <Name>Diary.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diary.Repositories\Diary.Repositories.csproj">
+      <Project>{679B9784-8AF5-4C88-88AD-14DF592B4335}</Project>
+      <Name>Diary.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AdminMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\CreateAccountSubItems\AccountsCreationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\CreateAccountSubItems\AccountsReviewingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\CreateAccountSubItems\EditAccountInfo\AccountInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\CreateAccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\AuditoriumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\EditCourcesWizzard\EditCourcesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\EditGroupWizzard\EditGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\EditSubjectsWizzard\EditSubjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\GroupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\ScheduleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\SpecializationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\CourcesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\SubjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessSubItems\TeacherInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\EducationalProcessView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\InfoSubItems\ContactInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\InfoSubItems\LibraryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\InfoSubItems\LicensesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\InfoSubItems\NewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\InfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

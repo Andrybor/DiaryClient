@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModernMessageBoxLib</name>
+    </assembly>
+    <members>
+        <member name="T:ModernMessageBoxLib.ModernMessageBox">
+            <summary>
+            Display a MessageBox with a Modern Style
+            </summary>
+            <summary>
+            ModernMessageBox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button1TextProperty">
+            <summary>
+            The display content of Button1
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button1Text">
+            <summary>
+            The display content of Button1
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button1StatusProperty">
+            <summary>
+            The status of Button1(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button1Status">
+            <summary>
+            The status of Button1(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button2TextProperty">
+            <summary>
+            The display content of Button2
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button2Text">
+            <summary>
+            The display content of Button2
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button2StatusProperty">
+            <summary>
+            The status of Button2(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button2Status">
+            <summary>
+            The status of Button2(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button3TextProperty">
+            <summary>
+            The display content of Button3
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button3Text">
+            <summary>
+            The display content of Button3
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.Button3StatusProperty">
+            <summary>
+            The status of Button3(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button3Status">
+            <summary>
+            The status of Button3(IsEnabled and Visibility)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.MessageProperty">
+            <summary>
+            The message to display in the messagebox
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Message">
+            <summary>
+            The message to display in the messagebox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.HeadIconProperty">
+            <summary>
+            Messagebox's icon
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.HeadIcon">
+            <summary>
+            Messagebox's icon
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.CloseCaptionButtonEnabledProperty">
+            <summary>
+            control the IsEnabled attr of the close button
+            The default value is True
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.CloseCaptionButtonEnabled">
+            <summary>
+            control the IsEnabled attr of the close button
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.CheckboxVisibilityProperty">
+            <summary>
+            Get or set the Visibility of the checkbox
+            the default value is <see cref="F:System.Windows.Visibility.Collapsed"/>
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.CheckboxVisibility">
+            <summary>
+            Get or set the Visibility of the checkbox
+            the default value is <see cref="F:System.Windows.Visibility.Collapsed"/>
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.CheckboxTextProperty">
+            <summary>
+            Get or set the text to display on the checkbox
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.CheckboxText">
+            <summary>
+            Get or set the text to display on the checkbox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.CheckboxCheckedProperty">
+            <summary>
+            Get or set the IsChecked attr of the checkbox
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.CheckboxChecked">
+            <summary>
+            Get or set the IsChecked attr of the checkbox
+            The default value is false
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.TextBoxTextProperty">
+            <summary>
+            Get or set the text of the textbox inside the MessageBox.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.TextBoxText">
+            <summary>
+            Get or set the text of the textbox inside the MessageBox.
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.TextBoxVisibilityProperty">
+            <summary>
+            Get or set the Visibility of the textbox
+            The default is <see cref="F:System.Windows.Visibility.Collapsed"/>
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.TextBoxVisibility">
+            <summary>
+            Get or set the Visibility of the textbox
+            The default is <see cref="F:System.Windows.Visibility.Collapsed"/>
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button1Key">
+            <summary>
+            The key to trigger Button1
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button2Key">
+            <summary>
+            /// The key to trigger Button2
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Button3Key">
+            <summary>
+            The key to trigger Button3
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.CloseCaptionButtonKey">
+            <summary>
+            The key to trigger closecaptionbutton
+            Default is Escape
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.SoundToPlay">
+            <summary>
+            Get or set the system sound to play when the messageBox display.
+            Set to null to play no sound.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.EnableWindowBlur">
+            <summary>
+            Specify if the window will get a blur background in win10.
+            To enable this feature, pls make sure your Background prop is not solid.
+            Set this value to false if u don't need this feature.
+            The default value is true.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.ModernMessageBox.Result">
+            <summary>
+            get the result of the ModernMessageBox
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.ModernMessageBox.#ctor">
+            <summary>
+            Create an object of ModernMessageBox
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.ModernMessageBox.#ctor(System.String,System.String,ModernMessageBoxLib.ModernMessageboxIcons,System.String,System.String,System.String,System.Media.SystemSound)">
+            <summary>
+            Create and init ModernMessageBox
+            </summary>
+            <param name="message">message to display on the messagebox</param>
+            <param name="title">title of the messagebox</param>
+            <param name="headIcon">the icon of the messagebox</param>
+            <param name="button1Text">Content of the button1</param>
+            <param name="button2Text">Content of the button2</param>
+            <param name="button3Text">Content of the button3</param>
+            <param name="soundToPlay">The system sound to play in the messageBox. If you leave it null, it will set to SoundFor(headIcon). if you want to play no sound, set SoundToPlay prop to null after construct</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.ModernMessageBox.SoundFor(ModernMessageBoxLib.ModernMessageboxIcons)">
+            <summary>
+            get the sound of the icon in Windows MessageBox
+            </summary>
+            <param name="ico"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.mainTextBox">
+            <summary>
+            mainTextBox Name Field
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageBox.mainCheckBox">
+            <summary>
+            mainCheckBox Name Field
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.ModernMessageBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.ModernMessageboxButtonStatus">
+            <summary>
+            Define the status of the button on the ModernMessageBox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxButtonStatus.Normal">
+            <summary>
+            Display and enabled the button
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxButtonStatus.Disabled">
+            <summary>
+            Display and disabled the button
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxButtonStatus.Invisibled">
+            <summary>
+            Hide the button
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.ModernMessageboxIcons">
+            <summary>
+            Defind the icon to display on the ModernMessageBox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.Info">
+            <summary>
+            (i)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.Question">
+            <summary>
+            (?)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.Warning">
+            <summary>
+            ⚠
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.Error">
+            <summary>
+            (X)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.Done">
+            <summary>
+            (√)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxIcons.None">
+            <summary>
+            No any icons
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.ModernMessageboxResult">
+            <summary>
+            Define the button result of the ModernMessageBox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxResult.Button1">
+            <summary>
+            The first button in the window from left to right (yes,ok,...)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxResult.Button2">
+            <summary>
+            The second button in the window from left to right (no,cancel,...)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxResult.Button3">
+            <summary>
+            The third button in the window from left to right (cancel,...)
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxResult.CloseCaptionButton">
+            <summary>
+            the "Close" button on the right top side
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.ModernMessageboxResult.Unknown">
+            <summary>
+            The window haven't closed or Unknown(Maybe the user closed the window by clicking Alt+F4)
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.ProcessRing.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.QModernMessageBox">
+            <summary>
+            Common usage of ModernMessageBox,
+            Just like using <see cref="T:System.Windows.MessageBox"/> in WPF or using QMessageBox in QT
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QModernMessageBox.GlobalParentWindow">
+            <summary>
+            Get or set the default owner of the MessageBoxWindow
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QModernMessageBox.MainLang">
+            <summary>
+            Get or set the text of the buttons
+            The default value is in English. If you want other language, you should specify them manully
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QModernMessageBox.GlobalBackground">
+            <summary>
+            Specify the default Background for ModernMessageBox
+            You can specify a transparent or half-transparent value in this field.
+            If the operate system is Win10, The window will get a Blur background.
+            The default value is Black,0.6 Opacity
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QModernMessageBox.GlobalForeground">
+            <summary>
+            Specify the default Foreground for ModernMessageBox
+            The default value is White
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QModernMessageBox.GlobalEnableWindowBlur">
+            <summary>
+            Specify if the window will get a blur background in win10.
+            To enable this feature, pls make sure your Background prop is not solid.
+            Set this value to false if u don't need this feature.
+            The default value is true.
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Show(System.Windows.Window,System.String,System.String,ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons,ModernMessageBoxLib.ModernMessageboxIcons,System.Boolean)">
+            <summary>
+            Create and show a Modern Messagebox
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+            <param name="btns">
+            The bottons to show
+            </param>
+            <param name="icon">
+            The icon to show
+            </param>
+            <param name="playSound">play the system sound when the messageBox show</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Show(System.String,System.String,ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons,ModernMessageBoxLib.ModernMessageboxIcons,System.Boolean)">
+            <summary>
+            Create and show a Modern Messagebox
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+            <param name="btns">
+            The bottons to show
+            </param>
+            <param name="icon">
+            The icon to show
+            </param>
+            <param name="playSound">play the system sound when the messageBox show</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Warning(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a warning sign and a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Warning(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a warning sign and a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Info(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with an infomation sign and a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Info(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with an infomation sign and a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Error(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with an error sign and a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Error(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with an error sign and a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Question(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a question sign and a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Question(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a question sign and a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.None(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.None(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Done(System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a done sign and a "OK" button
+            </summary>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.QModernMessageBox.Done(System.Windows.Window,System.String,System.String)">
+            <summary>
+            Create and show a metro messagebox with a done sign and a "OK" button
+            </summary>
+            <param name="parentWindow">the owner of the messagebox window</param>
+            <param name="msg">Message</param>
+            <param name="title">Title</param>
+        </member>
+        <member name="T:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons">
+            <summary>
+            Define the buttons on the QModernMessageBox
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons.Ok">
+            <summary>
+            Button1:OK
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons.OkCancel">
+            <summary>
+            Button1:OK
+            Button2:Cancel
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons.YesNo">
+            <summary>
+            Button1:Yes
+            Button2:No
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons.YesNoCancel">
+            <summary>
+            Button1:Yes
+            Button2:No
+            Button3:Cancel
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.QModernMessageBox.QModernMessageBoxButtons.AbortRetryIgnore">
+            <summary>
+            Button1:Abort
+            Button2:Retry
+            Button3:Ignore
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.QMetroMessageLang">
+            <summary>
+            Provide language setting for QMessageBox
+            the default language is in English
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Ok">
+            <summary>
+            get or set the display of the OK button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Cancel">
+            <summary>
+            get or set the display of the Cancel button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Yes">
+            <summary>
+            get or set the display of the Yes button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.No">
+            <summary>
+            get or set the display of the No button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Ignore">
+            <summary>
+            get or set the display of the Ignore button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Retry">
+            <summary>
+            get or set the display of the Retry button
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.QMetroMessageLang.Abort">
+            <summary>
+            get or set the display of the Abort button
+            </summary>
+        </member>
+        <member name="T:ModernMessageBoxLib.IndeterminateProgressWindow">
+            <summary>
+            A window to notice user the progress.
+            </summary>
+            <summary>
+            IndeterminateProgressWindow
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.IndeterminateProgressWindow.GlobalBackground">
+            <summary>
+            Get or set the default background of IndeterminateProgressWindow.
+            Transparent is allowed.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.IndeterminateProgressWindow.GlobalForeground">
+            <summary>
+            Get or set the default foreground of IndeterminateProgressWindow
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.IndeterminateProgressWindow.MessageProperty">
+            <summary>
+            Get or set the element to show at the IndeterminateProgressWindow.
+            </summary>
+        </member>
+        <member name="F:ModernMessageBoxLib.IndeterminateProgressWindow.CornerRadiusProperty">
+            <summary>
+            Get or set the CornerRadius of the background border.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.IndeterminateProgressWindow.Message">
+            <summary>
+            Get or set the element to show at the IndeterminateProgressWindow.
+            </summary>
+        </member>
+        <member name="P:ModernMessageBoxLib.IndeterminateProgressWindow.CornerRadius">
+            <summary>
+            Get or set the CornerRadius of the background border.
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.IndeterminateProgressWindow.#ctor">
+            <summary>
+            Create an object of IndeterminateProgressWindow.
+            </summary>
+        </member>
+        <member name="M:ModernMessageBoxLib.IndeterminateProgressWindow.#ctor(System.Object)">
+            <summary>
+            Create and init an object of IndeterminateProgressWindow.
+            </summary>
+            <param name="message">the element to show at the IndeterminateProgressWindow</param>
+        </member>
+        <member name="M:ModernMessageBoxLib.IndeterminateProgressWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Diary.Admin.Menu.EducationalProcessSubItems.EditSubjectsWizzard.EditSubjectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             Width="500"
+             Height="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0"
+                   Text="{DynamicResource TxtCourse}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+        <mah:SplitButton Grid.Column="1"
+                         Grid.Row="0"
+                         Margin="10,0"
+                         VerticalAlignment="Center"
+                         ItemsSource="{Binding Courses,UpdateSourceTrigger=PropertyChanged}"
+                         SelectedItem="{Binding SelectedCourse,UpdateSourceTrigger=PropertyChanged}">
+            <mah:SplitButton.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" />
+                </DataTemplate>
+            </mah:SplitButton.ItemTemplate>
+        </mah:SplitButton>
+
+        <TextBlock Grid.Column="0"
+                   Grid.Row="1"
+                   Text="{DynamicResource TxtSubject}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="10,0"
+                 VerticalAlignment="Center"
+                 Text="{Binding Subject.Title,UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button x:Name="Save"
+                Grid.Row="2"
+                Grid.Column="1"
+                Content="{DynamicResource TxtSave}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="100" />
+    </Grid>
+</UserControl>

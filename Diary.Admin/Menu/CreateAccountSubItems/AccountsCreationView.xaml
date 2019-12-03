@@ -1,0 +1,215 @@
+﻿<Grid x:Class="Diary.Admin.Menu.CreateAccountSubItems.AccountsCreationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:cal="http://www.caliburnproject.org"
+      xmlns:converters="clr-namespace:Diary.Controls.Converters;assembly=Diary.Controls"
+      mc:Ignorable="d"
+      MinHeight="400"
+      MinWidth="600">
+    <Grid.Resources>
+        <converters:SexConverter x:Key="SexConverter" />
+    </Grid.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.Resources>
+                <BooleanToVisibilityConverter
+                    x:Key="BooleanToVisibilityConverter" />
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <StackPanel Grid.Column="0">
+                    <ComboBox
+                        Margin="10"
+                        cal:Message.Attach="[Event SelectionChanged]=[Action SelectionChanged]"
+                        HorizontalAlignment="Center"
+                        ItemsSource="{Binding AccountTypes}"
+                        SelectedItem="{Binding SelectedAccountType}" />
+
+                    <Border Height="400"
+                            BorderThickness="2"
+                            Margin="20,0"
+                            BorderBrush="{DynamicResource DefaultGray}">
+                        <Image Source="{Binding Photo}"
+                               Height="400" 
+                               Stretch="UniformToFill"/>
+                    </Border>
+                    <Button Margin="10"
+                            x:Name="ChoosePhoto"
+                            Content="{DynamicResource TxtChoosePhoto}"
+                            HorizontalAlignment="Center" />
+                </StackPanel>
+
+            </Grid>
+
+            <StackPanel Margin="0,5,0,0" Grid.Column="1">
+                <Expander Header="{DynamicResource TxtBasicInfo}"
+                          Margin="5"
+                          IsExpanded="False">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="30" />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   Text="{DynamicResource TxtName}"
+                                   Margin="10" />
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   Grid.Row="1"
+                                   Text="{DynamicResource TxtSurname}"
+                                   Margin="10" />
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   Grid.Row="2"
+                                   Text="{DynamicResource TxtMiddleName}"
+                                   Margin="10" />
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   Grid.Row="3"
+                                   Margin="10"
+                                   Text="{DynamicResource TxtBirthday}" />
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   Grid.Row="4"
+                                   Margin="10,0,0,0"
+                                   Text="{DynamicResource TxtSex}" />
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="5"
+                                   HorizontalAlignment="Center"
+                                   Text="{DynamicResource TxtEmail}"
+                                   Margin="10" />
+
+                        <TextBlock Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   Grid.Row="6"
+                                   Margin="10,0,0,10"
+                                   Text="{DynamicResource TxtPhone}" />
+
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="0"
+                                 Text="{Binding User.Name,UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="1"
+                                 Text="{Binding User.Surname,UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="2"
+                                 Text="{Binding User.MiddleName,UpdateSourceTrigger=PropertyChanged}" />
+
+                        <DatePicker Grid.Column="1"
+                                    Grid.Row="3"
+                                    Margin="5"
+                                    Text="{Binding User.Birthday,UpdateSourceTrigger=PropertyChanged}"/>
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Horizontal"
+                                    Grid.Row="4">
+                            <RadioButton VerticalAlignment="Center"
+                                         Content="{DynamicResource TxtMale}"
+                                         Margin="50,0,100,0"
+                                         IsChecked="{Binding Sex, Converter={StaticResource SexConverter}, ConverterParameter=Male,UpdateSourceTrigger=PropertyChanged}" />
+                            <RadioButton VerticalAlignment="Center"
+                                         Content="{DynamicResource TxtFemale}"
+                                         Margin="50,0,0,0"
+                                         IsChecked="{Binding Sex, Converter={StaticResource SexConverter}, ConverterParameter=Female,UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="5"
+                                 Text="{Binding User.Email,UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="6"
+                                 Text="{Binding User.PhoneNumber,UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+
+                <Expander Header="{DynamicResource TxtAccountInfo}"
+                          IsExpanded="false"
+                          Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Margin="10"
+                                   HorizontalAlignment="Center"
+                                   Text="{DynamicResource TxtLogin}" />
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                                   Margin="10"
+                                   HorizontalAlignment="Center"
+                                   Text="{DynamicResource TxtPassword}" />
+
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="0"
+                                 Text="{Binding Account.Login,UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Grid.Column="1"
+                                 Grid.Row="1"
+                                 Text="{Binding Account.Password,UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </Expander>
+                <Expander Header="{DynamicResource TxtGroup}"
+                          Visibility="{Binding IsStudentGroup,Converter={StaticResource BooleanToVisibilityConverter}}"
+                          IsExpanded="false"
+                          Margin="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Margin="10"
+                                   HorizontalAlignment="Center"
+                                   Text="{DynamicResource TxtGroups}" />
+
+                        <ComboBox Grid.Column="1"
+                                 Grid.Row="0"
+                                 ItemsSource="{Binding Groups}"
+                                 SelectedItem="{Binding Group}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+                </Expander>
+
+
+                <Button x:Name="Create"
+                        Content="{DynamicResource TxtCreate}"
+                        HorizontalAlignment="Center"
+                        Margin="0,50,0,0"
+                        Height="30" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Grid>
